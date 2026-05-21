@@ -8,7 +8,30 @@
 
 ---
 
+## ⚠️ Round 7 修订说明 (2026-05-21)
+
+> 本说明由 Round 7 Wave 2 T7 加入，原文一字未删，只做澄清。
+
+本报告先前在叙事层把 Renhuai123/ziwei-doushu 当成"独立紫微排盘引擎"的描述需要校正。Round 7 后续 fetch + Wave 1 T4 对上游 CHANGELOG 直接核对后，事实校准如下：
+
+- **排盘真上游 = `iztro` (SylarLong, 3.7k⭐, MIT) + `lunar-javascript`**，**不是** Renhuai123/ziwei-doushu 自研。这一点本报告第 1 节顶层结论第 1 句、第 2 节 H1 行、第 3 节 Q1 已经在证据层指出（`algorithm.ts:6,7,72`），但本报告标题/摘要叙事可能让读者误以为 ziwei-doushu 是"独立紫微引擎"——这层叙事需要修订。
+- **ziwei-doushu (Renhuai123) 的独有价值 = 格局知识库 + 倪师象征解读 + 古籍数字化**，**不是算法层**。具体包括：
+  - `lib/ziwei/patterns.ts` 1118 行 / 41 格局 detector（本报告同时使用 "41" 与 "34" 两个口径——T7 不替本报告作者拍板哪个准，留待后续 wave 复核；按 patterns.ts 实际计数为准）
+  - `lib/ziwei/heming-knowledge.ts` 倪师象征解读（合盘断语）
+  - `lib/classics/data/*.ts` 三本古籍（《骨髓赋》《全集》《全书》）
+  - `lib/nihai/*.ts` 倪师三纪课程数据
+- **参见**：`12-Meta_J/canonical/skills/ziwei-classics/references/iztro-school-config-map.md`（Wave 1 T4 产出），含 iztro CHANGELOG 流派配置对照表的事实切片 + 与本报告的关系说明。
+
+修订动作：
+1. 本顶部说明 = 全局口径校准；
+2. 第 1 节顶层结论已有正确证据（`algorithm.ts:6,7,72`），下方加 ⚠️ 行内标记复述；
+3. 第 5 节"上膛路径"叙事保留，不动。
+
+---
+
 ## 1. 顶层结论（3 句话）
+
+> ⚠️ **Round 7 校正**：以下第 1 句"不是自研排盘引擎"为本报告事实层结论，正确无须修订；真上游 = `iztro` (SylarLong) + `lunar-javascript`，ziwei-doushu 是 iztro 下游消费者 + 倪师壳。若本报告其他段落出现"独立紫微引擎"叙事，以本顶部修订说明为准。
 
 1. **不是"自研排盘引擎"**，是 `iztro` + `lunar-javascript` 的薄壳：所有排盘计算（`generateChart`）调用 `iztro.astro.bySolar()` 一行完成（`lib/ziwei/algorithm.ts:6-7,72`），repo 自己没有写一行紫微星位推演代码。README 第 7 行宣称的"自研完整排盘算法"与第 141 行"排盘：基于 iztro + lunar-javascript"自相矛盾，第 141 行才是真相。
 2. **真正有价值的资产是中文领域知识，不是算法**：1118 行格局识别器（`patterns.ts`，41 个 detector 全部手写带古籍出处）+ 559 行公版古籍 JSON（《骨髓赋》/《全集》/《全书》）+ 329 行合盘断语（`heming-knowledge.ts`）+ 1538 行倪海夏三纪课程数据（`nihai/`）。这才是 J叔可装备的核心。
@@ -102,6 +125,8 @@ Next.js 特有 API 依赖搜索结果（`grep -rn "next/server\|next/headers\|co
 外部 API 依赖判定：**排盘本身零依赖**，AI 解读那部分是闭源（README:100-110 明示），开源版只是骨架。
 
 ### Q5. 代码质量诚实度——是不是真排盘？
+
+> ⚠️ **Round 7 校正**：本节"原创增量"的定位需要按 Round 7 修订说明读——"真原创资产"指的是**格局知识库 + 倪师象征解读 + 古籍数字化**，**不指排盘算法**。排盘算法 = iztro。下表中的 patterns.ts / heming-knowledge / classics / nihai 是 J叔玄学部的核心装备目标，但它们是**知识/规则层**，不是**算法层**。
 
 **结论**：核心排盘是套别人的，但有真正的原创增量。
 
