@@ -1,0 +1,19 @@
+==== ziwei-doushu smoke test (J叔真实命盘) ====
+birthInfo: {"year":1984,"month":6,"day":30,"hour":4,"gender":"male"}
+lunarInfo: {"lunarYear":1984,"lunarMonth":6,"lunarDay":2,"yearStem":0,"yearBranch":0,"isLeapMonth":false}
+命宫地支: 卯 (idx=3)
+身宫地支: 亥 (idx=11)
+
+==== 十二宫主星分布 ====
+  兄弟(寅): 武曲(normal),天相(bright)
+  命宫(卯)[命]: 太阳(bright),天梁(bright)
+  父母(辰): 七杀(bright)
+  福德(巳): 天机(normal)
+  田宅(午): 紫微(bright)
+  官禄(未): (空宫)
+  仆役(申): 破军(normal)
+  迁移(酉): (空宫)
+  疾厄(戌): 廉贞(normal),天府(bright)
+  财帛(亥)[身]: 太阴(bright)
+  子女(子): 贪狼(bright)
+  夫妻(丑): 天同(dim),巨门(dim)
